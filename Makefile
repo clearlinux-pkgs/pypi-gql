@@ -1,5 +1,5 @@
 PKG_NAME := pypi-gql
-URL = https://files.pythonhosted.org/packages/f6/1e/e7f0231f05127466a1fc63c4a9e69a95676f4729a80f1c3b5106e5c42cf9/gql-3.4.0.tar.gz
+URL = https://files.pythonhosted.org/packages/70/bb/b328e1f39eeab4dcbfb5ee31365e96e41a174478f8d10c877c08bfd688ee/gql-3.4.1.tar.gz
 ARCHIVES = 
 
 include ../common/Makefile.common
