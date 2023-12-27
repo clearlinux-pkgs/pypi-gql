@@ -5,7 +5,7 @@
 #
 Name     : pypi-gql
 Version  : 3.4.1
-Release  : 8
+Release  : 9
 URL      : https://files.pythonhosted.org/packages/70/bb/b328e1f39eeab4dcbfb5ee31365e96e41a174478f8d10c877c08bfd688ee/gql-3.4.1.tar.gz
 Source0  : https://files.pythonhosted.org/packages/70/bb/b328e1f39eeab4dcbfb5ee31365e96e41a174478f8d10c877c08bfd688ee/gql-3.4.1.tar.gz
 Summary  : GraphQL client for Python
