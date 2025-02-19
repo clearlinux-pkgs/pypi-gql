@@ -7,7 +7,7 @@
 #
 Name     : pypi-gql
 Version  : 3.5.1
-Release  : 13
+Release  : 14
 URL      : https://files.pythonhosted.org/packages/5c/6b/40b5e2191d6f7b3a22cbdc22fd1ae57f68f9cc479dbb93d69312a7af4d67/gql-3.5.1.tar.gz
 Source0  : https://files.pythonhosted.org/packages/5c/6b/40b5e2191d6f7b3a22cbdc22fd1ae57f68f9cc479dbb93d69312a7af4d67/gql-3.5.1.tar.gz
 Summary  : GraphQL client for Python
@@ -95,7 +95,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1739990059
+export SOURCE_DATE_EPOCH=1739997740
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -111,6 +111,7 @@ FCFLAGS="$CLEAR_INTERMEDIATE_FCFLAGS"
 ASFLAGS="$CLEAR_INTERMEDIATE_ASFLAGS"
 LDFLAGS="$CLEAR_INTERMEDIATE_LDFLAGS"
 export MAKEFLAGS=%{?_smp_mflags}
+pypi-dep-fix.py . graphql-core
 python3 setup.py build
 
 pushd ../buildavx2/
@@ -119,6 +120,7 @@ CXXFLAGS="$CLEAR_INTERMEDIATE_CXXFLAGS -march=x86-64-v3 -Wl,-z,x86-64-v3 "
 FFLAGS="$CLEAR_INTERMEDIATE_FFLAGS -march=x86-64-v3 -Wl,-z,x86-64-v3 "
 FCFLAGS="$CLEAR_INTERMEDIATE_FCFLAGS -march=x86-64-v3 "
 LDFLAGS="$CLEAR_INTERMEDIATE_LDFLAGS -march=x86-64-v3 "
+pypi-dep-fix.py . graphql-core
 python3 setup.py build
 
 popd
@@ -142,6 +144,7 @@ rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/pypi-gql
 cp %{_builddir}/gql-%{version}/LICENSE %{buildroot}/usr/share/package-licenses/pypi-gql/5fc4bc923b03ed1a6b3cbdcd3be10b4335fa3687 || :
 python3 -tt setup.py build  install --root=%{buildroot}
+pypi-dep-fix.py %{buildroot} graphql-core
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
 echo ----[ mark ]----
